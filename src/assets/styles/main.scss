@@ -1,0 +1,25 @@
+//1. Configurations and helpers
+@import 'abstracts/misc';
+@import 'abstracts/modern-normalize';
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+@import 'abstracts/functions';
+
+// 2. Base
+// @import 'base/fonts';
+@import 'base/base';
+@import 'base/helpers';
+
+//3. Layout
+@import 'layout/authLayout';
+@import 'layout/mainLayout';
+
+//4. Components
+@import 'components/buttton';
+
+//5. Pages
+
+//6. Transitions
+@import 'transitions/fadeIn';
+
+// 7. Vendors

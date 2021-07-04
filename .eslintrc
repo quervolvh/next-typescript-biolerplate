@@ -1,0 +1,84 @@
+{
+  "parser": "@typescript-eslint/parser", 
+  "plugins": ["@typescript-eslint", "react-hooks", "react"],
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "project" : ["./tsconfig.json"]
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+  "settings": {
+    "react": {
+      "createClass": "createReactClass",
+      "pragma": "React",
+      "version": "detect"
+    },
+    "linkComponents": [
+      "Hyperlink",
+      {
+        "name": "Link",
+        "linkAttribute": "to"
+      },
+      {
+        "name": "NavLink",
+        "linkAttribute": "to"
+      }
+    ]
+  },
+  "rules": {
+    "comma-dangle": 0,
+    "linebreak-style": 0,
+    "global-require": "off",
+    "prefer-spread": "off",
+    "arrow-parens": "off",
+    "no-console": 1,
+    "no-restricted-syntax": "off",
+    "no-plusplus": 0,
+    "array-callback-return": 1,
+    "block-scoped-var": 1,
+    "curly": 0,
+    "eqeqeq": 1,
+    "no-alert": 1,
+    "no-else-return": 1,
+    "no-empty-function": 1,
+    "no-use-before-define": 0,
+    "class-methods-use-this": "off",
+    "no-nested-ternary": "off",
+    "no-underscore-dangle": "off",
+    "consistent-return": "off",
+    "no-unused-vars": "warn",
+    "no-unused-expressions": [
+      1,
+      {
+        "allowTernary": true
+      }
+    ],
+    "react/jsx-key": 1,
+    "react-hooks/rules-of-hooks": "warn",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/no-unescaped-entities": 1,
+    "react/no-unknown-property": 1,
+    "react/prop-types": [
+      "warn",
+      {
+        "ignore": [
+          "history"
+        ]
+      }
+    ],
+    "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/no-cycle": "off",
+    "react/jsx-filename-extension": "off",
+    "guard-for-in": "off",
+    "import/no-unresolved": "off"
+  }
+}

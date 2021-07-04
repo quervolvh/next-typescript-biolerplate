@@ -1,0 +1,3 @@
+export const RESET_APP_START = 'RESET_APP_START';
+export const RESET_APP = 'RESET_APP';
+export const RESET_APP_SUCCESS = 'RESET_APP_SUCCESS';

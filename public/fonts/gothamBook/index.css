@@ -1,0 +1,7 @@
+@font-face {
+    text-rendering: optimizeLegibility;
+    font-family: 'gotham-book';
+    font-weight: normal;
+    font-style: normal;
+    src: url('./Gotham-Book.ttf') format('truetype');
+}

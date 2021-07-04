@@ -1,0 +1,12 @@
+  @mixin font-weight($keyword) {
+    font-weight: get-font-weight($keyword);
+  }
+
+  @mixin font-size($keyword) {
+      @media only screen and (min-width: 1700px) {
+        font-size: normal-font-size($keyword);
+      }
+      @media only screen and (max-width: 1699px) {
+        font-size: smaller-font-size($keyword);
+      }
+  }

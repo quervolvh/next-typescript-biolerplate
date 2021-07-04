@@ -1,0 +1,72 @@
+:root {
+    --primary-color: #F15A01;
+  }
+
+  $colors: (
+    primary: #F15A01,
+    white: #ffffff,
+    secondary-text: rgba(24, 25, 31, 0.5),
+    footer: #18191F,
+    footer-icon-bg: #303135,
+    footer-text: rgba(217, 219, 225, 1),
+    dark: rgba(24, 25, 31, 1),
+    table-light-text: rgba(24, 25, 31, 0.4),
+    faux-blue: #3B429F,
+    button-disabled: rgba(24, 25, 31, 0.4),
+  );
+
+  $shadows: (
+    card: 0 16px 24px rgba(0, 0, 0, 0.06) 0 2px 6px rgba(0, 0, 0, 0.04) 0 0 1px rgba(0, 0, 0, 0.04),
+  );
+
+  $main-font: 'gotham-book', sans-serif;
+  $header-font: 'gotham-bold', sans-serif;;
+  $default-font-size: 14px;
+
+  $inputBorder : 1px solid map-get($colors , input-border);
+  
+  $normal-font-sizes: (
+    xx-small: 10px,
+    x-small: 12px,
+    small: 14px,
+    regular: 16px,
+    medium: 18px,
+    large: 22px,
+    n-large: 24px,
+    m-large: 35px,
+    x-large: 40px,
+    xx-large: 70px,
+  );
+
+  $small-font-sizes: (
+    xx-small: 7px,
+    x-small: 9px,
+    small: 11px,
+    regular: 12px,
+    medium: 14px,
+    large: 16px,
+    n-large: 19px,
+    m-large: 21px,
+    x-large: 25px,
+    xx-large: 40px
+  );
+  
+  $font-weights: (
+    extra-light: 200,
+    light: 300,
+    regular: 400,
+    medium: 500,
+    semi-bold: 600,
+    bold: 700,
+    black: 900,
+  );
+  
+  $status-color: (
+    primary: rgba(105, 216, 149, 1),
+    secondary: rgba(225, 91, 67, 1),
+);
+
+$status-background: (
+  primary: #ffffff,
+  secondary: #ffffff
+);

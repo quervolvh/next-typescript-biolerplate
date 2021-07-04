@@ -1,0 +1,15 @@
+@each $name, $color in $status-color {
+
+    .status-#{$name} {
+      color: $color !important;
+    }
+
+    .status-full-#{$name} {
+      border-radius: 4px;
+      padding: 4px 8px;
+      width: max-content;
+      background: map-get($status-background , $name) !important;
+      color: $color !important;
+    }
+
+}

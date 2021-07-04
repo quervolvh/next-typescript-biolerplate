@@ -1,0 +1,7 @@
+@font-face {
+    text-rendering: optimizeLegibility;
+    font-family: 'gotham-bold';
+    font-weight: 800;
+    font-style: normal;
+    src: url('./Gotham-Bold.ttf') format('truetype');
+} 
