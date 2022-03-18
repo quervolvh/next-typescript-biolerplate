@@ -4,7 +4,6 @@ import { ForgotPassword, ResetPassword, SignIn } from 'common/auth';
 import { useRouter } from 'next/router';
 import { storeInterface } from 'types';
 import { useSelector } from 'react-redux';
-import Stellas from 'assets/svg/logo/stellas-long.svg';
 
 const Home: React.FC<Props> = ({ isMobile, deviceWidth }) => {
 
@@ -108,8 +107,6 @@ const Home: React.FC<Props> = ({ isMobile, deviceWidth }) => {
         >
 
             <div className="landing-page">
-
-                <img src={Stellas} className="landing-page-img"/>
 
                 <ForgotPassword
                     trigger={trigger["requestReset"]}

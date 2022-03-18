@@ -48,7 +48,7 @@ export const MainLayoutMobileHeader: React.FC<Props> = ({ active, avatar }): JSX
                     <div className="main-layout-sideNav-content">
 
                         {SIDENAVLINKS.map((item, index) => {
-                            const Icon = item.icon;
+                            // const Icon = item.icon;
                             const activeItem = active?.toLocaleLowerCase() || "";
                             return (
                                 <div
@@ -59,7 +59,7 @@ export const MainLayoutMobileHeader: React.FC<Props> = ({ active, avatar }): JSX
                                         <a
                                             className={(activeItem === String(item.title).toLowerCase()) ? 'active' : ''}
                                             role="button">
-                                            <div dangerouslySetInnerHTML={{ __html: Icon }} className="bulb" />
+                                            <div className="bulb" />
                                             <span> {item.title} </span>
                                         </a>
                                     </Link>

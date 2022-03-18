@@ -10,8 +10,5 @@ export * from './Head';
 export * from './Header/MobileHeaderToggler';
 export * from './Modal';
 export * from './Pagination';
-export * from './placeholder';
-export * from './placeholder/TransactionPlaceHolder';
-export * from './Table';
 export * from './Transitions';
 export * from './ViewFormatter';

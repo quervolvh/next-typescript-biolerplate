@@ -1,44 +1,44 @@
-import { DashboardSvg, CustomersIcon, LogsIcon, DocumentsIcon, NotificationsIcon, CardsIcon, SettingsIcon } from 'components';
+// import { DashboardSvg, CustomersIcon, LogsIcon, DocumentsIcon, NotificationsIcon, CardsIcon, SettingsIcon } from 'components';
 
 export const SIDENAVLINKS: {
     title: string,
     link: string,
-    icon: string
+    // icon: string
 }[] = [
         {
             title: "Dashboard",
             link: "/dashboard",
-            icon: DashboardSvg,
+            // icon: DashboardSvg,
         },
         {
             title: "Customers",
             link: "/customers",
-            icon: CustomersIcon
+            // icon: CustomersIcon
         },
         {
             title: "Audit logs",
             link: "/audit",
-            icon: LogsIcon
+            // icon: LogsIcon
         },
         {
             title: "Approve Documents",
             link: "/documents",
-            icon: DocumentsIcon
+            // icon: DocumentsIcon
         },
         {
             title: "Notification Manager",
             link: "/notifications",
-            icon: NotificationsIcon
+            // icon: NotificationsIcon
         },
         {
             title: "Card Manager",
             link: "/cards",
-            icon: CardsIcon
+            // icon: CardsIcon
         },
         {
             title: "Settings",
             link: "/settings",
-            icon: SettingsIcon
+            // icon: SettingsIcon
         }
 
     ];

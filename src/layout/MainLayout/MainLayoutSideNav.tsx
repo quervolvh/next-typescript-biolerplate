@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import StellasIcon from 'assets/svg/logo/stellas-long.svg';
 import { SIDENAVLINKS } from 'constants/index';
 import { classnames } from 'utils';
 
@@ -11,13 +10,13 @@ const MainLayoutSideNav: React.FC<{ active?: string }> = ({ active }) => {
             <div className="main-layout-sideNav-company">
 
                 <div className="main-layout-sideNav-company-box">
-                    <img src={StellasIcon} alt={"Stellas-bank"} />
+                    {/* <img src={StellasIcon} alt={"Stellas-bank"} /> */}
                 </div>
 
             </div>
             <div className="main-layout-sideNav-content">
                 {SIDENAVLINKS.map((item, index) => {
-                    const Icon = item.icon;
+                    // const Icon = item.icon;
                     const activeItem = active?.toLocaleLowerCase() || "";
                     const isActive = `/${activeItem}` === String(item.link).toLowerCase();
 
@@ -30,7 +29,7 @@ const MainLayoutSideNav: React.FC<{ active?: string }> = ({ active }) => {
                                 <a
                                     className={isActive ? 'active' : ''}
                                     role="button">
-                                    <div dangerouslySetInnerHTML={{ __html: Icon }} className="bulb" />
+                                    <div className="bulb" />
                                     <span> {item.title} </span>
                                 </a>
                             </Link>

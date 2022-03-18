@@ -1,5 +1,5 @@
 import React from 'react';
-import { CopyIcon } from 'components';
+// import { CopyIcon } from 'components';
 import { quickToast } from 'redux/store';
 
 export const CopyToClipBoard: React.FC<{ text: string, displayText?: string }> = ({ text, displayText }) => {
@@ -13,7 +13,7 @@ export const CopyToClipBoard: React.FC<{ text: string, displayText?: string }> =
 
         <span onClick={() => copy()}>
             <span>{displayText ? displayText : text} </span>
-            <span dangerouslySetInnerHTML={{ __html: CopyIcon }} />
+            {/* <span dangerouslySetInnerHTML={{ __html: CopyIcon }} /> */}
         </span>
 
     )

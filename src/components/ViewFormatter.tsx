@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { RightIcon } from 'components';
+// import { RightIcon } from 'components';
 import { classnames } from 'utils';
 import { LinkWrapper } from './LinkWrapper';
 
@@ -21,7 +21,7 @@ export const ViewFormatter: React.FC<Props> = ({ title, extraValue, value, type 
     const collapsible = type === "Collapsible";
     const collapsedClass = isCollapsed ? "collapsible collapsible-show" : "collapsible";
 
-    const hasRightIcon = props.rightIcon !== null ? true : false;
+    // const hasRightIcon = props.rightIcon !== null ? true : false;
 
     const onClick = () => {
         if (collapsible) {
@@ -70,7 +70,7 @@ export const ViewFormatter: React.FC<Props> = ({ title, extraValue, value, type 
 
 
                         <ViewFormatterIconBox
-                            svgIcon={hasRightIcon ? RightIcon : undefined}
+                            svgIcon={undefined}
                             iconClass="view-formatter settings-item-icon"
                         />
 
@@ -95,7 +95,7 @@ export const ViewFormatter: React.FC<Props> = ({ title, extraValue, value, type 
                             <p> {title || ""} </p>
 
                             <ViewFormatterIconBox
-                                svgIcon={(collapsible && hasRightIcon) ? RightIcon : undefined}
+                                svgIcon={undefined}
                                 iconClass='collapsible-icon'
                             />
 

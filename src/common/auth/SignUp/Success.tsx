@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { Button, SuccessIcon } from 'components';
+import { Button } from 'components';
 import { loginBodyType } from 'types/authTypes';
 import { processLoginResponse } from 'redux/actions';
 import { useDispatch } from 'react-redux';
@@ -32,7 +32,7 @@ export const SignInSuccess: FunctionComponent<Props> = ({ toggle, text, loginBod
 
             <div className="successful-payment">
 
-                <div dangerouslySetInnerHTML={{ __html: SuccessIcon }} />
+                {/* <div dangerouslySetInnerHTML={{ __html: SuccessIcon }} /> */}
 
                 <h1 className="mt-5 mb-3"> Congratulations </h1>
 
