@@ -1,0 +1,45 @@
+.form-field-pin {
+  border-bottom: 0 !important;
+
+  .form-field-title {
+    @include font-size(medium);
+    margin-bottom: 40px !important;
+    text-align: center;
+    color: color(dark);
+  }
+
+  &-input > input {
+    border-radius: 8px;
+    padding-right: 0;
+    padding-left: 0;
+    width: 60px !important;
+    background: #f3f3f3 !important;
+    text-align: center;
+    color: color(dark) !important;
+  }
+
+  &.title-left {
+    &:not(:last-child) {
+      margin-bottom: 24px !important;
+    }
+
+    .form-field-title {
+      margin: 0 0 24px !important;
+      text-align: left;
+    }
+
+    div:not(.form-field-title) {
+      width: 28%;
+      height: 70px;
+
+      &:not(:last-child) {
+        margin-right: 5%;
+      }
+    }
+
+    .form-field-pin-input > input {
+      width: 100% !important;
+      height: 100%;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.component {
+  &-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 9px 10px;
+
+    .form-field {
+      width: 70%;
+      max-width: 236px;
+
+      input {
+        margin-right: 15px;
+        width: 100%;
+      }
+    }
+
+    h2 {
+      @include media-query(mobile) {
+        @include font-size-override(medium);
+      }
+    }
+
+    .button,
+    a > button {
+      @include media-query(mobile) {
+        border: 0;
+        padding-right: 0;
+        padding-left: 5px;
+      }
+    }
+
+    &-center {
+      margin-bottom: -15px;
+
+      h2 {
+        margin: auto;
+      }
+    }
+  }
+}

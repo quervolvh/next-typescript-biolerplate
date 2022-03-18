@@ -1,0 +1,21 @@
+.router-scope {
+  position: fixed;
+  width: 100%;
+
+  &-line {
+    width: 0;
+    height: 5.5px;
+    background: linear-gradient(242.07deg, #3c354293 52.03%, #0c09050a 73.09%);
+    background-size: 400% 400%;
+    animation: content-loader-anim 3s infinite;
+    transition: 0.2s ease;
+  }
+
+  &-start {
+    width: 40%;
+  }
+
+  &-complete {
+    width: 100%;
+  }
+}

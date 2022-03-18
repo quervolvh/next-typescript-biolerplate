@@ -1,0 +1,88 @@
+.auth {
+  &-remember-me {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+
+    .form-field {
+      margin: 0;
+    }
+
+    button {
+      padding-right: 25px !important;
+      padding-left: 25px !important;
+      width: max-content;
+    }
+  }
+
+  .labelled-checkbox p {
+    color: color(dark);
+  }
+
+  &-extra-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    a:first-child {
+      color: color(dark);
+    }
+
+    a:not(:first-child) {
+      text-decoration: underline;
+      color: color(dark);
+    }
+
+    a {
+      @include font-size(small);
+    }
+
+  }
+
+  &-sign-in {
+    @extend %box-shadow;
+
+    @include media-query(real-mobile) {
+      width: 100%;
+    }
+
+    @include media-query(real-mobile) {
+      min-height: 100vh;
+    }
+
+    @include media-query(tablet-and-mobile) {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    margin: auto;
+    padding: 32px;
+    width: 430px;
+    min-width: 309px;
+    background: color(white);
+
+    .component-header {
+      padding: 0;
+
+      h2,
+      h4 {
+        @include font-size(medium);
+        margin-bottom: 8px;
+        width: 100%;
+        text-align: center;
+      }
+
+      h4 {
+        @include font-size(regular);
+        color: color(dark);
+      }
+
+    }
+
+    .auth-form {
+      margin-top: 24px;
+    }
+
+  }
+}

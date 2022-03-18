@@ -1,0 +1,115 @@
+.fadeIn {
+  animation: slideUpIn;
+  animation-duration: 400ms;
+  animation-timing-function: ease;
+  animation-iteration-count: 1;
+}
+
+.slideUpInside {
+  animation: crazySlide;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+}
+
+.strickFadeIn {
+  animation: fadingIn;
+  animation-duration: 400ms;
+  animation-timing-function: ease;
+  animation-iteration-count: 1;
+}
+
+.SlideDown {
+  animation: fadeout;
+  animation-duration: 400ms;
+  animation-timing-function: ease;
+  animation-iteration-count: 1;
+}
+
+.fadeInside {
+  animation: fadeInSide;
+  animation-duration: 400ms;
+  animation-timing-function: ease;
+  animation-iteration-count: 1;
+}
+
+.fadeOutside {
+  animation: fadeout;
+  animation-duration: 500ms;
+  animation-timing-function: ease;
+  animation-iteration-count: 1;
+}
+
+@keyframes fadingIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUpIn {
+  0% {
+    opacity: 0.6;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes crazySlide {
+  0% {
+    transform: translateY(20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0.6;
+  }
+
+  100% {
+    opacity: 0.4;
+    transform: translateY(20px);
+  }
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+@keyframes fadeAway {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInSide {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

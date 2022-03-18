@@ -1,0 +1,13 @@
+.h1 {
+  @include font-size(large);
+}
+
+.medium-text {
+  @include font-size(medium);
+}
+
+.link-wrapper {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}

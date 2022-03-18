@@ -1,0 +1,88 @@
+{
+  "name": "stellas-Back-Office-FE",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
+  },
+  "dependencies": {
+    "axios": "^0.21.4",
+    "chart.js": "^3.4.1",
+    "cors": "^2.8.5",
+    "crypto-js": "^4.1.1",
+    "dayjs": "^1.10.6",
+    "litepicker": "^2.0.11",
+    "lodash.debounce": "^4.0.8",
+    "next": "^12.0.7",
+    "otpauth": "^7.0.5",
+    "pdfmake": "^0.2.2",
+    "react": "17.0.2",
+    "react-chartjs-2": "^3.0.3",
+    "react-dom": "17.0.2",
+    "react-number-format": "^4.5.5",
+    "react-otp-input": "^2.4.0",
+    "react-redux": "^7.2.3",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-persist": "^6.0.0",
+    "redux-persist-transform-filter": "^0.0.20",
+    "redux-thunk": "^2.3.0",
+    "sass": "^1.35.1",
+    "use-lodash-debounce": "^1.1.0"
+  },
+  "devDependencies": {
+    "@babel/runtime": "^7.14.6",
+    "@types/node": "*",
+    "@types/react-dom": "^17.0.8",
+    "@types/react-redux": "^7.1.18",
+    "@types/speakeasy": "^2.0.6",
+    "@typescript-eslint/eslint-plugin": "4.28.1",
+    "@typescript-eslint/parser": "4.28.1",
+    "eslint": "^7.30.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-airbnb-typescript": "^12.3.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.1",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.4",
+    "prettier": "^1.19.1",
+    "prettierrc": "*",
+    "sass-lint": "^1.13.1",
+    "typescript": "^4.5.4",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.42.0",
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-middleware": "^4.3.0",
+    "webpack-dev-server": "^4.7.1"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 9,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,scss,css}": [
+      "prettier --write"
+    ]
+  }
+}

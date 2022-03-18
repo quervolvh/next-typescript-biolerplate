@@ -1,0 +1,59 @@
+.footer {
+  color: color(footer-text);
+
+  &-link {
+    display: block;
+  }
+
+  &-icon-set {
+    display: flex;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100%;
+      padding: 0;
+      width: 25px;
+      height: 25px;
+      background: rgba(0, 0, 0, 0.1);
+
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  p,
+  a {
+    margin: 6px 0;
+    line-height: 1.7;
+  }
+
+  &-location-set {
+    display: flex;
+    align-items: flex-start;
+    margin: 25px 0;
+
+    img {
+      margin-right: 10px;
+    }
+
+    p {
+      margin: 0;
+      line-height: unset;
+    }
+  }
+
+  h1 {
+    @include font-size(large);
+    margin-bottom: 26.5px;
+    color: white;
+  }
+}

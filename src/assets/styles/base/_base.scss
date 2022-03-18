@@ -1,0 +1,63 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  @include font-size(regular);
+  box-sizing: border-box;
+  overflow-x: hidden;
+  line-height: 1.4;
+  font-family: $main-font;
+  color: color(dark);
+}
+
+h1 {
+  @include font-size(x-large);
+  font-family: $header-font;
+  font-weight: 900;
+}
+
+h2 {
+  @include font-size(large);
+}
+
+* {
+  line-height: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+a {
+  @include font-size(regular);
+  text-decoration: none;
+  color: unset;
+}
+
+[role='button'] {
+  cursor: default;
+}
+
+.no-action {
+  opacity: 0.6;
+  color: color(empty-item);
+}
+
+input {
+  -webkit-appearance: none;
+}
+
+.no-select {
+  user-select: none;
+}

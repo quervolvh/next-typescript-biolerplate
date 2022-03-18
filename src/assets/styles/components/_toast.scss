@@ -1,0 +1,35 @@
+.toast-holder {
+  z-index: 1060;
+  position: fixed;
+  top: 110px;
+  left: 0;
+  width: calc(100% - 1%);
+  transition: 1s ease;
+}
+
+.toast {
+  position: relative;
+  margin: 5px;
+  margin-left: auto;
+  box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px 50px;
+  width: max-content;
+  background: white;
+  line-height: 2rem;
+  animation-duration: 1s !important;
+  transition: 0.1s ease;
+
+  &-item.dismiss {
+    @extend .toast;
+    padding: 0;
+    animation: fadeout 0.5s;
+  }
+
+  &-container {
+    @include font-size(regular);
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+}

@@ -1,0 +1,98 @@
+.litepicker {
+  z-index: 1;
+}
+
+.litepicker .container__months.columns-2 {
+  box-shadow: none;
+}
+
+.litepicker .container__days .day-item {
+  margin: 7px 0;
+  color: color(primary);
+}
+
+.litepicker .container__months {
+  box-shadow: none;
+  padding: 19px;
+}
+
+.litepicker .container__days .day-item.is-in-range {
+  background: color(primary) !important;
+  color: white;
+}
+
+.litepicker .container__months .month-item-header .button-next-month > svg,
+.litepicker .container__months .month-item-header .button-previous-month > svg {
+  fill: color(dark);
+}
+
+.litepicker .container__days {
+  margin-bottom: 20px;
+}
+
+.litepicker .container__days .day-item.is-in-range {
+  background: #22445b;
+}
+
+.litepicker .container__days .day-item.is-end-date,
+.litepicker .container__days .day-item.is-start-date {
+  background: #55b1ff;
+}
+
+.litepicker select {
+  border-radius: 7px;
+  border: 0;
+  padding: 6px 10px !important;
+  font-size: 10px;
+  color: white;
+
+  &:first-child {
+    margin-right: 10px;
+  }
+}
+
+.litepicker select:hover,
+.litepicker select:focus {
+  outline: none;
+  box-shadow: 0 10px 10px #0000001a;
+  background: #25373f;
+}
+
+.litepicker .container__months .month-item-weekdays-row {
+  text-transform: uppercase;
+}
+
+.month-item-header {
+  padding-top: 20px;
+}
+
+.month-item-name,
+.litepicker .container__months .month-item-header div > .month-item-year {
+  font-weight: unset;
+  color: color(dark);
+}
+
+.date-picker {
+  &-holder {
+    display: none;
+    width: max-content;
+
+    &.show {
+      display: block;
+    }
+  }
+
+  &-body {
+    @extend %box-shadow;
+    border-radius: 14px;
+    width: max-content;
+  }
+
+  &-box {
+    border-radius: 10px;
+    padding: 10px 36px 10px 12px;
+    width: max-content;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.5);
+  }
+}

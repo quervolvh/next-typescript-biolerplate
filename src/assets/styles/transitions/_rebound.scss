@@ -1,0 +1,62 @@
+.rebound {
+  animation: rebound_ !important;
+  animation-duration: 400ms !important;
+  animation-timing-function: ease !important;
+  animation-iteration-count: 1 !important;
+}
+
+@keyframes fadingIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes rebound_ {
+  0% {
+    transform: translateX(4px);
+  }
+
+  10% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(-4px);
+  }
+
+  30% {
+    transform: translateX(0);
+  }
+
+  40% {
+    transform: translateX(4px);
+  }
+
+  50% {
+    transform: translateX(0);
+  }
+
+  60% {
+    transform: translateX(-4px);
+  }
+
+  70% {
+    transform: translateX(0);
+  }
+
+  80% {
+    transform: translateX(4px);
+  }
+
+  90% {
+    transform: translateX(-4px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

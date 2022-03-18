@@ -1,0 +1,66 @@
+.content-loader {
+  margin: 30px 14px;
+  border-radius: 5px;
+  height: 45px;
+  background: linear-gradient(242.07deg, #2e2c3326 52.03%, #0807062e 73.09%);
+  background-size: 400% 400%;
+  animation-name: content-loader-anim;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+
+  &.modal-subtitle {
+    margin: 15px auto 0;
+    width: 40%;
+    height: 15px;
+  }
+
+  &.title {
+    margin: 30px 14px 10px;
+    width: 40%;
+    height: 15px;
+  }
+}
+
+img.content-loader {
+  @extend .content-loader;
+  margin: 0;
+  border-radius: 100%;
+  background-size: 900% 700%;
+  animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.content-loader-v {
+  @extend %box-shadow;
+  margin: 20px 0;
+  padding: 20px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &-item {
+    @extend .content-loader;
+    margin: 5px;
+    width: 50%;
+    height: 20px;
+
+    &:not(:first-child) {
+      margin: 10px 5px 0;
+      width: 30%;
+    }
+  }
+}
+
+@keyframes content-loader-anim {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}

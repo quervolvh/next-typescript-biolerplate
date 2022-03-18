@@ -1,0 +1,147 @@
+.form-field .select {
+  position: relative;
+  display: flex;
+  align-items: center;
+  outline: none;
+  border-radius: 4px;
+  border: $inputBorder;
+  padding: 13px 24px;
+  padding-right: 0;
+  height: 55px;
+  background: color(input-bg);
+  transition: color 0.2s, background 0.2s;
+  transition-timing-function: ease;
+
+  &.withContextMenu {
+    border: 0;
+    padding: 0 6px;
+    width: max-content;
+    // background: #e2e8f0;
+    background: transparent;
+
+    ._menu-selector {
+      display: flex;
+      align-items: center;
+    }
+
+    .form-field-title {
+      margin-right: 10px;
+      max-width: unset;
+      text-overflow: unset;
+    }
+
+    .select-box {
+      padding-right: 0;
+    }
+
+    .select-pop {
+      top: 40px;
+      right: 0;
+      min-width: 232px;
+    }
+
+    &:hover {
+      border: 0;
+      // background: darken(#e2e8f0, 10);
+    }
+  }
+
+  .down-icon {
+    display: block;
+    padding-left: 20px;
+  }
+
+  &:hover,
+  &:focus {
+    border: $inputBorder;
+  }
+
+  &-box {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10px;
+    width: 100%;
+    height: 100%;
+
+    p {
+      max-width: calc(100% - 20px);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    i {
+      align-self: center;
+    }
+
+    img,
+    svg {
+      max-width: 40px;
+      max-height: 40px;
+      object-fit: cover;
+    }
+  }
+
+  &-pop {
+    z-index: 1;
+    position: absolute;
+    top: 55px;
+    margin-top: 10px;
+    box-shadow: 0 4px 7px rgb(0 0 0 / 5%);
+    border-radius: 4px;
+    padding: 0;
+    width: 100%;
+    max-height: 400px;
+    overflow-y: auto;
+    background: white;
+
+    &-search {
+      position: sticky;
+      top: 0;
+      padding: 28px 15px 9px;
+      background: white;
+    }
+
+    ul {
+      width: 100%;
+      list-style: none;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      padding: 14px 25px;
+      min-width: 100%;
+      cursor: pointer;
+      transition: color 0.2s, background 0.2s;
+      transition-timing-function: ease;
+
+      &.add-field {
+        background: #e1eeff;
+      }
+    }
+
+    i {
+      margin-top: 2px;
+      margin-right: 13px;
+      font-size: 18px;
+    }
+
+    li:hover {
+      color: color(primary);
+    }
+
+    img,
+    svg {
+      max-width: 40px;
+      max-height: 40px;
+    }
+  }
+
+  .form-input {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+}

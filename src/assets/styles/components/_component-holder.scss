@@ -1,0 +1,21 @@
+.component-holder {
+  @extend %box-shadow;
+  display: flex;
+  flex-direction: column;
+
+  &.no-border {
+    box-shadow: none;
+  }
+
+  &-body {
+    height: 100%;
+  }
+
+  &.with-chart {
+    background: color(white);
+
+    .component-holder-body {
+      min-height: 400px;
+    }
+  }
+}

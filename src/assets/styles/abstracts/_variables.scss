@@ -1,0 +1,88 @@
+:root {
+  --primary-color: #f15a01;
+}
+
+$colors: (
+  primary: #f15a01,
+);
+
+$colors: (
+  primary: #f15a01,
+  red: #ea3223,
+  white: #ffffff,
+  footer: #18191f,
+  footer-icon-bg: #303135,
+  footer-text: rgba(217, 219, 225, 1),
+  dark: rgba(24, 25, 31, 1),
+  input-border: #e0e3e5,
+  input-bg: #f3f3f3,
+  input-placeholder: rgba(185, 185, 185, 1),
+  modal-overlay: rgba(0, 0, 0, 0.2),
+  success: rgba(75, 222, 151, 1),
+  empty-item: rgba(241, 90, 1, 0.5),
+);
+
+$shadows: (
+  card: 0 16px 24px rgba(0, 0, 0, 0.06) 0 2px 6px rgba(0, 0, 0, 0.04) 0 0 1px rgba(0, 0, 0, 0.04)
+);
+
+$header-shadow: 0 16px 24px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.04), 0 0 1px rgba(0, 0, 0, 0.04);
+
+$main-font: 'Circular', sans-serif;
+$header-font: 'Circular-black', sans-serif;
+$aux-font: 'Poppins', 'sans-serif';
+
+$default-font-size: 14px;
+
+$inputBorder: 1px solid map-get($colors, input-bg);
+
+$checkBoxBorder: 1px solid rgba(0, 0, 0, 0.1);
+
+$normal-font-sizes: (
+  xx-small: 9px,
+  x-small: 12px,
+  small: 14px,
+  regular: 16px,
+  medium: 18px,
+  large: 22.5px,
+  m-large: 26px,
+  x-large: 35px,
+  xx-large: 40px,
+  xxx-large: 50px
+);
+
+$small-font-sizes: (
+  xx-small: 8px,
+  x-small: 10px,
+  small: 12.5px,
+  regular: 14px,
+  medium: 16px,
+  large: 20.5px,
+  m-large: 25.5px,
+  x-large: 29.5px,
+  xx-large: 32px,
+  xxx-large: 40px
+);
+
+$small-tab-font-sizes: (
+  xx-small: 7px,
+  x-small: 9px,
+  small: 11px,
+  regular: 12.5px,
+  medium: 14px,
+  large: 16px,
+  m-large: 21px,
+  x-large: 24px,
+  xx-large: 30px,
+  xxx-large: 37px
+);
+
+$font-weights: (
+  extra-light: 200,
+  light: 300,
+  regular: 400,
+  medium: 500,
+  semi-bold: 600,
+  bold: 700,
+  black: 900
+);

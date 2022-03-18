@@ -1,0 +1,118 @@
+.custom-checkbox {
+  @include font-size(small);
+  position: relative;
+  display: block;
+  margin-right: 0.5rem;
+  margin-bottom: 0;
+  padding-left: 20px;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+
+  &--sm {
+    padding-left: 15px;
+    width: 15px;
+    height: 15px;
+
+    .checkmark {
+      width: 15px !important;
+      height: 15px !important;
+    }
+  }
+
+  input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    cursor: pointer;
+    opacity: 0;
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 3.5px;
+    border: $checkBoxBorder;
+    width: 22px;
+    height: 22px;
+    background: color(white);
+
+    &::after {
+      position: absolute;
+      display: none;
+      content: '';
+    }
+
+    &--circle {
+      border-radius: 50%;
+    }
+  }
+
+  &:hover input ~ .checkmark {
+    background-color: darken($color: color(white), $amount: 20);
+  }
+
+  input:checked ~ .checkmark {
+    border-color: color(dark);
+    background-color: color(dark);
+
+    &.checkmark--circle {
+      background: transparent;
+
+      &::after {
+        top: 50%;
+        left: 50%;
+        border-radius: 50%;
+        border: 0;
+        width: 7px;
+        height: 7px;
+        background-color: color(white);
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  input:checked ~ .checkmark::after {
+    display: block;
+  }
+
+  & .checkmark::after {
+    top: 1.5px;
+    left: 5.7px;
+    border: 1px solid color(white);
+    border-width: 0 2.9px 2.9px 0;
+    width: 7px;
+    height: 12px;
+    transform: rotate(36deg);
+    -webkit-transform: rotate(36deg);
+    -ms-transform: rotate(36deg);
+  }
+
+  &-wrapper {
+    display: flex;
+    margin: 5px 0;
+    padding: 0;
+    padding-left: 2px;
+    background: transparent !important;
+
+    input[type='checkbox'] {
+      margin: auto 10px auto 0;
+      border-radius: 3.5px;
+      border: $checkBoxBorder;
+      width: 11px;
+      height: 11px;
+    }
+
+    label {
+      @include font-weight(bold);
+      margin-right: 10px;
+      padding-top: 4px;
+      color: color(dark);
+    }
+  }
+}

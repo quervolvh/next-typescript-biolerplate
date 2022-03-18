@@ -1,0 +1,125 @@
+.button {
+  @include media-query(small-tablet) {
+    padding: 9px 19px;
+  }
+
+  @media only screen and (max-width: 1400px) {
+    @include font-size(small);
+    padding: 14px 25px;
+  }
+
+  @include font-size(regular);
+  border-radius: 8px;
+  border: 2px solid transparent;
+  padding: 14.5px 31px;
+  width: 100%;
+  background: color(primary);
+  cursor: pointer;
+  text-align: center;
+  font-weight: 600;
+  color: color(white);
+  transition-duration: 0.2s;
+  transition-property: color, background, transform;
+  transition-timing-function: ease;
+
+  &-title {
+    &-dual {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &-dual span:first-child {
+      margin-bottom: 10px;
+    }
+  }
+
+  &.no-bg {
+    border: 1px solid color(primary);
+    background: transparent;
+    color: color(primary);
+
+    &-dark {
+      border: 1px solid #d7d7d7;
+      background: transparent;
+      color: unset;
+    }
+
+    &:hover {
+      background: transparent;
+    }
+  }
+
+  &.smallText {
+    @include font-size(small);
+  }
+
+  &.no-border {
+    border: 0;
+    background: unset;
+    color: black;
+
+    &:hover {
+      background: lighten(black, 40);
+      color: white;
+    }
+  }
+
+  &.delete {
+    background: red;
+
+    &:hover {
+      background: darken(red, 10);
+      color: white;
+    }
+  }
+
+  &.transparent {
+    background: transparent;
+
+    &:hover {
+      background: transparent;
+    }
+  }
+
+  &:hover {
+    background: darken(color(primary), 5);
+    transform: translate(0, -2px);
+  }
+
+  &:disabled {
+    background: color(dark);
+  }
+
+  &:disabled:hover {
+    background: darken(color(dark), 10);
+  }
+
+  &-success {
+    background: color(primary);
+
+    &:hover,
+    &:focus {
+      background: color(primary);
+    }
+  }
+
+  &-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-fab {
+    position: absolute;
+    right: 35px;
+    bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    padding: 0;
+    width: 45px;
+    height: 45px;
+  }
+}

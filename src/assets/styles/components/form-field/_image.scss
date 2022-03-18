@@ -1,0 +1,77 @@
+.form-field-image {
+  &-title {
+    color: color(dark);
+  }
+
+  input {
+    display: none;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    border: $inputBorder;
+    height: 139px;
+    overflow: hidden;
+    background: color(primary);
+    color: color(white);
+    transition: color 0.2s, background 0.2s;
+    transition-timing-function: ease;
+
+    &.darken,
+    &:hover {
+      background: lighten(color(dark), 80);
+    }
+  }
+
+  &.hide-drop-zone {
+    display: flex;
+    align-items: center;
+
+    p {
+      margin-left: 10px;
+    }
+  }
+
+  &.hide-drop-zone > div {
+    justify-content: flex-start;
+    border: 0;
+    height: auto;
+    background: transparent;
+
+    &.darken,
+    &:hover {
+      background: lighten(color(dark), 80);
+    }
+
+    img {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  img {
+    border-radius: 100%;
+    border: 2px solid color(input-border);
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+  }
+
+  &-none {
+    display: flex;
+    flex-direction: column;
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &-yes img {
+    width: 60%;
+    height: 60%;
+  }
+}

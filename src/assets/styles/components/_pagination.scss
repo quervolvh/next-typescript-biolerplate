@@ -1,0 +1,24 @@
+.pagination {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+
+    &:first-of-type {
+      @extend %box-shadow;
+    }
+
+    li {
+      margin: 5px;
+      border-radius: 3px;
+      padding: 10px 20px;
+
+      &.active {
+        @extend %box-shadow;
+        background: color(primary);
+        color: color(white);
+      }
+    }
+  }
+}

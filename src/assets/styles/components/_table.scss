@@ -1,0 +1,63 @@
+.table {
+  &-component {
+    width: 100%;
+    overflow-x: auto;
+
+    table {
+      width: 100%;
+    }
+
+    th {
+      @include font-size(small);
+      padding: 20px 0 8px;
+      text-align: left;
+      font-weight: 700;
+
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+
+    thead tr {
+      border-bottom: 0;
+    }
+
+    tr {
+      border-bottom: 0.5px solid #ececec;
+    }
+
+    td {
+      padding: 20px 0;
+      font-weight: 300;
+      color: color(dark);
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      p {
+        font-size: unset;
+      }
+
+      button {
+        margin: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        max-width: 150px;
+      }
+
+      &.td-button {
+        padding: 15px 0;
+      }
+
+      .td-div {
+
+        p:not(:first-child) {
+          color: color(dark);
+        }
+
+      }
+
+    }
+  }
+}

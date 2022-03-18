@@ -1,0 +1,51 @@
+//1. Configurations and helpers
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+@import 'abstracts/functions';
+@import 'abstracts/misc';
+@import 'abstracts/mics_';
+@import 'abstracts/modern-normalize';
+@import 'abstracts/extends';
+
+// 2. Base
+@import 'base/base';
+@import 'base/helpers';
+
+//3. Layout
+@import 'layout/landingLayout';
+@import 'layout/mainLayout';
+
+//4. Components
+@import 'components/auth';
+@import 'components/button';
+@import 'components/component-header';
+@import 'components/component-holder';
+@import 'components/footer';
+@import 'components/form-field/custom-checkbox';
+@import 'components/form-field/image';
+@import 'components/form-field/index';
+@import 'components/form-field/pin';
+@import 'components/form-field/radio';
+@import 'components/form-field/select';
+@import 'components/form-field/switch';
+@import 'components/modal';
+@import 'components/pagination';
+@import 'components/table';
+@import 'components/toast';
+@import 'components/view-formatter';
+
+//5. Pages
+@import 'pages/landing/landing';
+
+//6. Transitions
+@import 'transitions/content-loader';
+@import 'transitions/fadeIn';
+@import 'transitions/landing-trans';
+@import 'transitions/rebound';
+@import 'transitions/router-scope';
+@import 'transitions/scale-out';
+
+// 7. Vendors
+@import 'vendors/lite-picker';
+
+// 8. Color Schemes

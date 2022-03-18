@@ -1,0 +1,265 @@
+.form-field {
+  @extend .strickFadeIn;
+  position: relative;
+  margin-bottom: 24px;
+
+  &.title-left {
+    .form-field-title {
+      text-align: left;
+    }
+  }
+
+  &-with-border {
+    margin-bottom: 0;
+    border-radius: 8px;
+    border: 1px solid color(dark);
+    padding: 2px;
+    width: 100%;
+    max-width: 485px;
+    background: unset;
+
+    input {
+      background: unset !important;
+    }
+
+  }
+
+  &-icon-left {
+
+    .form-field-icon {
+      top: 30%;
+      right: unset !important;
+      left: 20px;
+    }
+
+    input {
+      padding-left: 60px !important;
+    }
+
+  }
+
+  &.no-border {
+    input {
+      border-color: transparent;
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 0;
+      background: none;
+
+      &:hover,
+      &:focus {
+        border-color: transparent;
+      }
+    }
+
+    .form-field-title {
+      margin: 0;
+    }
+
+    .form-field-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    svg {
+      margin: 0 10px 0 15px;
+    }
+  }
+
+  &.control-field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    height: 40px;
+
+    div {
+      position: relative;
+      top: unset;
+      right: unset;
+      bottom: unset;
+    }
+
+    input {
+      border: unset;
+      background: unset;
+    }
+  }
+
+  &.confirm {
+    border-bottom: 1px solid lighten(color(dark), 60);
+    color: color(dark);
+  }
+
+  p,
+  &-title {
+    @include font-size(small);
+    margin: 10px 0;
+
+    &-block {
+      &-flex {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      &-flex > .button {
+        width: max-content;
+      }
+    }
+  }
+
+  input,
+  textarea {
+    @include font-size(small);
+    outline: none;
+    border-radius: 4px;
+    border: $inputBorder;
+    padding: 11px 24px;
+    width: 100%;
+    height: 53px;
+    resize: none;
+    background: color(input-bg);
+    line-height: 1.8;
+    font-family: unset;
+    transition: color 0.2s, background 0.2s;
+    transition-timing-function: ease;
+
+    &:read-only {
+      background-color: lighten(color(dark), 65);
+    }
+
+    &:hover,
+    &:focus {
+      border: $inputBorder;
+    }
+  }
+
+  &.with-password input {
+    padding-right: 52px;
+  }
+
+  textarea {
+    border-radius: 8px;
+    border: 1px solid color(input-border);
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 180px;
+    background: color(white);
+  }
+
+  ::placeholder,
+  &-placeholder {
+    @extend %form-placeholder;
+  }
+
+  &-icon,
+  &-password-toggle {
+    position: absolute;
+    top: 53%;
+    right: 20px;
+  }
+
+  &-icon {
+    top: 20px;
+  }
+
+  &.labelled-checkbox {
+    display: flex;
+  }
+
+  &-optional {
+    font-style: italic;
+    color: color(dark);
+  }
+
+  &-error {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    max-height: 0 !important;
+    overflow: hidden;
+    color: color(primary);
+    transition: 0.2s ease;
+
+    span {
+      display: none;
+    }
+
+    &-v {
+      padding-top: 20px;
+      max-height: 100px;
+      overflow: unset;
+
+      span {
+        display: block;
+      }
+    }
+
+    &.account-name-value {
+      color: color(dark);
+    }
+
+    &.success-mode {
+      color: color(success);
+
+      span {
+        display: none;
+      }
+    }
+  }
+
+  &.with-button {
+    @extend %box-shadow;
+
+    @include media-query(mobile) {
+      flex-direction: column;
+      box-shadow: none;
+      padding: 0;
+    }
+
+    display: flex;
+    margin-top: 30px;
+    border-radius: 10px;
+    padding: 14px;
+    background: white;
+
+    input {
+      @include media-query(mobile) {
+        box-shadow: $header-shadow;
+      }
+      border: 0;
+      background: transparent;
+    }
+
+    button {
+      @include media-query(mobile) {
+        margin: 20px auto;
+      }
+      max-width: max-content;
+    }
+
+    & .form-field-error {
+      @include media-query(mobile) {
+        position: unset;
+        margin: auto;
+      }
+      position: absolute;
+      bottom: -25px;
+    }
+  }
+
+  &-blank {
+    input {
+      @include media-query(mobile) {
+        text-align: center;
+      }
+
+      @include font-size(medium);
+      background: transparent !important;
+      color: color(dark);
+    }
+  }
+}

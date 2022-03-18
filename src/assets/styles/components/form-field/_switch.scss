@@ -1,0 +1,72 @@
+.form-field-switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &-box {
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    padding: 2px;
+    min-width: 56px;
+    max-width: 56px;
+    height: 29px;
+    background: color(dark);
+    transition: 0.2s ease;
+
+    &-with-icon {
+      min-width: 120px;
+      max-width: 120px;
+      height: 45px;
+    }
+
+    &-on {
+      background: color(primary);
+    }
+  }
+
+  &-toggler {
+    position: relative;
+    border-radius: 100%;
+    padding: 10px;
+    width: 25px;
+    height: 25px;
+    background: white;
+    transform: translateX(0);
+    transition: 0.2s ease;
+
+    &-on {
+      transform: translateX(27px);
+    }
+
+    &-with-icon {
+      border-radius: 16px;
+      width: 60px;
+      height: 32px;
+    }
+
+    &-with-icon.form-field-switch-toggler-on {
+      transform: translateX(50px);
+    }
+
+    &-icon {
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+
+      svg {
+        max-width: 50%;
+      }
+
+      path {
+        fill: color(dark);
+      }
+    }
+  }
+}

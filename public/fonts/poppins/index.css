@@ -1,0 +1,8 @@
+@font-face {
+  text-rendering: optimizeLegibility;
+  font-family: 'Poppins';
+  font-weight: 300;
+  font-style: normal;
+  src: url('./PoppinsLight.ttf');
+  src: url('./PoppinsLight.ttf') format('truetype');
+}

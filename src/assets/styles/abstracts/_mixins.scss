@@ -1,0 +1,102 @@
+@mixin font-weight($keyword) {
+  font-weight: get-font-weight($keyword);
+}
+
+@mixin font-size($keyword) {
+  @media only screen and (min-width: 1401px) {
+    font-size: normal-font-size($keyword);
+  }
+  @media only screen and (max-width: 1400px) {
+    font-size: smaller-font-size($keyword);
+  }
+  @include media-query(tablet) {
+    font-size: tab-font-size($keyword);
+  }
+}
+
+@mixin font-size-override($keyword) {
+  @media only screen and (min-width: 1401px) {
+    font-size: normal-font-size($keyword) !important;
+  }
+  @media only screen and (max-width: 1400px) {
+    font-size: smaller-font-size($keyword) !important;
+  }
+  @include media-query(tablet) {
+    font-size: tab-font-size($keyword) !important;
+  }
+}
+
+@mixin media-query($breakpoint) {
+  @if ($breakpoint == 'pc-low-resolution') {
+    @media only screen and (max-width: 1400px) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == 'pc-high-resolution') {
+    @media only screen and (min-width: 1401px) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == 'non-pc') {
+    @media only screen and (max-width: 1100px) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == 'pc') {
+    @media only screen and (min-width: 1101px) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == 'tablet') {
+    @media only screen and (min-width: 600px) and (max-width: 1099px) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == 'small-tablet') {
+    @media only screen and (min-width: 600px) and (max-width: 750px) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == 'tablet-and-mobile') {
+    @media only screen and (max-width: 750px) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == 'mobile') {
+    @media only screen and (max-width: 600px) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == 'real-mobile') {
+    @media only screen and (max-width: 450px) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == 'non-mobile') {
+    @media only screen and (min-width: 601px) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == 'extreme-mobile') {
+    @media only screen and (max-width: 300px) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == 'extreme-x-mobile') {
+    @media only screen and (max-width: 270px) {
+      @content;
+    }
+  }
+
+}
