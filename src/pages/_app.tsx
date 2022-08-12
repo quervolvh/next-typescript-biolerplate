@@ -4,69 +4,83 @@ import { store } from 'redux/store';
 import { AppProps } from 'next/app'
 import { useRouter } from 'next/router';
 import { HtmlHead, RouteChange } from 'components';
-import { resizer } from 'utils';
+import { change, resizer } from 'utils';
 import 'assets/styles/main.scss';
 import { ToastHolder } from 'components/toast/ToastHolder';
-import { useSessionTimeout } from 'hooks/useSessionTimeout';
-import { TimeOutBox } from 'common/session/TimeOutBox';
+import { SetClientAvailability } from 'hooks/useIsClient';
 
 function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const { auth } = store.getState();
 
-  const [isMobile, setIsMobile] = useState<boolean>(false);
-  const [deviceWidth, setDeviceWidth] = useState(0);
-  const [showMobileView, setShowMobileView] = useState(false);
-  const [timeOutTrigger, setTimeOutTrigger] = useState(0);
+  const [state, setState] = useState({
+    isMobile: false,
+    deviceWidth: 0,
+    showMobileView: false,
+    timeOutTrigger: 0,
+    clientMode: false
+  });
+
+  const { isMobile, deviceWidth, showMobileView, clientMode } = state;
 
   const isInSession = auth && auth.expiresAt && (new Date(auth.expiresAt).getTime() > new Date().getTime());
+
   const currentPath = router.pathname.trim();
 
-  const unProtectedRoutes = [
-    "/", "/api", "/customers","/dashboard", "/customers/[slug]" , "/documents",  "/documents/[slug]", "/audit"
-  ];
-
-  useSessionTimeout(isInSession, () => setTimeOutTrigger(1));
-
-  const devMode = process.env.NEXT_PUBLIC_NODE_ENV === 'development';
+  const unProtectedRoutes: string[] = ["", "/"];
 
   const redirectCondition =
     (isInSession && [...unProtectedRoutes].includes(currentPath)) ||
     (!auth.expiresAt && ![...unProtectedRoutes].includes(currentPath)) ||
     (auth.expiresAt && !isInSession && unProtectedRoutes.includes(currentPath));
 
-  useEffect(() => {
-    if (process.browser && window && document) {
-      window.addEventListener("resize", () => resizer(setIsMobile, setDeviceWidth), false);
-      setIsMobile(document?.body?.clientWidth < 601);
-      setDeviceWidth(document?.body?.clientWidth);
-    }
-    return (() => {
-      if (process.browser && window) {
-        window.removeEventListener("resize", () => resizer(setIsMobile, setDeviceWidth), false);
-      }
-    })
-    //eslint-disable-next-line
-  }, [process.browser]);
+  const resizeListener = (mode: "add" | "remove") => {
+
+    window?.[mode === "add" ? "addEventListener" : "removeEventListener"]?.("resize",
+
+      () => resizer(
+
+        (e) => change(e, "isMobile", setState),
+        (e) => change(e, "deviceWidth", setState)
+
+      ),
+
+      false
+
+    );
+
+  }
 
   useEffect(() => {
-    setShowMobileView(isMobile);
+
+    // On first load, this function sets the values obtained for client width and height.
+
+    if (clientMode && window && document) {
+
+      resizeListener("add");
+
+      change(document?.body?.clientWidth < 601, "isMobile", setState);
+
+      change(document?.body?.clientWidth, "deviceWidth", setState);
+
+    }
+
+    return (() => {
+
+      if (clientMode && window) { resizeListener("remove"); }
+
+    })
+
+    //eslint-disable-next-line
+  }, [clientMode]);
+
+  useEffect(() => {
+    change(isMobile, "showMobileView", setState);
   }, [isMobile]);
 
   useEffect(() => {
 
-    if (auth.expiresAt && !isInSession) {
-
-      if (devMode) {
-
-        router.replace("/dashboard");
-
-      } else if (!devMode) {
-
-        store.dispatch({ type: "RESET_APP" });
-
-      }
-    }
+    if (auth.expiresAt && !isInSession) store.dispatch({ type: "RESET_APP" });
 
     if (!auth.expiresAt && ![...unProtectedRoutes].includes(currentPath)) {
       router.replace("/");
@@ -81,14 +95,17 @@ function App({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
 
-    if (!isInSession) setTimeOutTrigger(0);
+    if (!isInSession) change(0, "timeOutTrigger", setState);
 
   }, [isInSession]);
 
+  SetClientAvailability((e) => change(e, "clientMode", setState));
+
   return (
     <Provider store={store}>
+      
       {
-        redirectCondition ?
+        (redirectCondition || !clientMode) ?
 
           <HtmlHead
             title={"Stellas"}
@@ -97,17 +114,19 @@ function App({ Component, pageProps }: AppProps) {
           :
           <>
             <ToastHolder />
-            <TimeOutBox
-              trigger={timeOutTrigger}
-            />
+
             <RouteChange />
+
             <Component
               {...pageProps}
               isMobile={showMobileView}
               deviceWidth={deviceWidth}
+              clientMode={clientMode}
             />
+
           </>
       }
+      
     </Provider>
   );
 

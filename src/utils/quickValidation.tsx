@@ -1,15 +1,18 @@
-import { validateEmail, validateMobile, validateFullName, isNumber } from "utils";
+import {
+    validateEmail, validateMobile, validateFullName, isNumber, containsLowerCase,
+    containsUpperCase, containsNumeric
+} from "utils/index";
 
 export const quickValidation = (
     field: string,
     value: string,
     form: { [key: string]: any },
-    extra: { [key: string]: any } = {}
+    extra: { [key: string]: any } = {},
+    context?: string
 ) => {
     let error = [];
     let result: { [key: string]: string[] } = { ...(form.error ? form.error : {}) };
     var finalRes: { [key: string]: string[] | boolean } = {};
-
 
     if (field === "email" || (field === "email_mobile" && !isNumber(value))) {
 
@@ -39,7 +42,19 @@ export const quickValidation = (
 
     } else if (field === "password") {
 
-        if (value.length < 6) error.push("Password must contain at least 6 characters.");
+        const loginContext = context === "login";
+
+        if (!loginContext && value.length < 8) error.push("Password must contain at least 8 characters.");
+
+        if (!loginContext && !containsLowerCase(value || "")) error.push("Password must contain at least one lowercase character");
+
+        if (!loginContext && !containsUpperCase(value || "")) error.push("Password must contain at least one uppercase character");
+
+        if (!loginContext && !containsNumeric(value || "")) error.push("Password must contain at least one numeric character");
+
+        if (loginContext && String(value || "").length < 6) error.push("Please enter a valid password");
+
+        // if (!containsSpecialChar(value || "")) error.push("Password must contain at least one special character");
 
         if (form['confirmPassword'] && form['confirmPassword'] !== value) {
 
@@ -135,6 +150,16 @@ export const quickValidation = (
         if (!value) error.push("Please enter address");
 
         if (value && value.length < 3) error.push("Please enter a valid address");
+
+    } else if (field === "recipients" ) {
+
+        if (value?.length === 0) error.push("Please enter at least one recipient");
+
+    } else if (field === "reason") {
+
+        if (!value) error.push("Please enter a reason");
+
+        if (value && value.length < 3) error.push("Please enter a valid reason");
 
     } else if (field === "pin") {
 
@@ -236,10 +261,9 @@ export const quickValidation = (
 
         }
 
-
     } else {
 
-        if (value.length < 2) error.push("Invalid credentials provided.");
+        if (field !== "recipients" && value.length < 2) error.push("Invalid credentials provided.");
 
     }
 
@@ -249,7 +273,7 @@ export const quickValidation = (
 
     }
 
-    if (["startDate", "endDate"].includes(field)) {
+    if (["startDate", "endDate", "date"].includes(field)) {
 
         if (!value || String(value).length === 0) error.push("Please select a date");
 
@@ -278,13 +302,17 @@ export const errorItem = (error: { [key: string]: any }, field: string) => {
     return false;
 }
 
-export const getPredefinedErrors = (fields: Array<(string | undefined | false )> = [""], extra: { [key: string]: any } = {}) => {
+export const getPredefinedErrors = (
+    fields: Array<(string | undefined | false)> = [""],
+    extra: { [key: string]: any } = {},
+    context?: string
+) => {
 
     const usableFields = fields.filter(item => typeof item === "string");
 
     const errorList = usableFields as Array<string>;
 
-    const errorPlaceHolder = errorList.map((item) => quickValidation(item, "", {}, extra));
+    const errorPlaceHolder = errorList.map((item) => quickValidation(item, "", {}, extra, context));
 
     let errorObject: { [key: string]: any } = {};
 

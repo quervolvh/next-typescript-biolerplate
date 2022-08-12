@@ -1,5 +1,5 @@
 {
-  "name": "stellas-Back-Office-FE",
+  "name": "typescript-bioler-plate",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "axios": "^0.21.4",
-    "chart.js": "^3.4.1",
     "cors": "^2.8.5",
     "crypto-js": "^4.1.1",
     "dayjs": "^1.10.6",
@@ -18,12 +17,9 @@
     "lodash.debounce": "^4.0.8",
     "next": "^12.0.7",
     "otpauth": "^7.0.5",
-    "pdfmake": "^0.2.2",
     "react": "17.0.2",
-    "react-chartjs-2": "^3.0.3",
     "react-dom": "17.0.2",
     "react-number-format": "^4.5.5",
-    "react-otp-input": "^2.4.0",
     "react-redux": "^7.2.3",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",

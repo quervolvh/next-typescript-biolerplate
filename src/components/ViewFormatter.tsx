@@ -1,162 +1,88 @@
-import React, { useState } from 'react';
-// import { RightIcon } from 'components';
+import React from 'react';
 import { classnames } from 'utils';
 import { LinkWrapper } from './LinkWrapper';
+import { ClassicViewFormatter } from './ViewFormatter/ClassicViewFormatter';
+import { ViewFormatterIconBox } from './ViewFormatter/ViewFormatterIconBox';
+import { RegularViewFormatter } from './ViewFormatter/RegularViewFormatter';
+import { RightIcon } from './Assets';
 
-export const ViewFormatterIconBox: React.FC<IconProps> = ({ textIcon, svgIcon, iconClass, linkIcon }) => {
+export const ViewFormatter: React.FC<Props> = ({ wrapperClass, ...props }) => {
 
-    return (
-        <>
-            {textIcon && <span className={iconClass || ""}> {textIcon} </span>}
-            {svgIcon && <div className={iconClass || ""} dangerouslySetInnerHTML={{ __html: svgIcon }} />}
-            {linkIcon && <img className={iconClass || ""} src={linkIcon} />}
-        </>
-    );
+    const { type = "", visible, link, externalLink, alignIcon } = props;
 
-}
+    if (visible === false) {
 
-export const ViewFormatter: React.FC<Props> = ({ title, extraValue, value, type = "", className = "", ...props }) => {
-
-    const [isCollapsed, setIsCollapsed] = useState(false);
-    const collapsible = type === "Collapsible";
-    const collapsedClass = isCollapsed ? "collapsible collapsible-show" : "collapsible";
-
-    // const hasRightIcon = props.rightIcon !== null ? true : false;
-
-    const onClick = () => {
-        if (collapsible) {
-            setIsCollapsed(!isCollapsed);
-            return;
-        }
-        props.onClick ? props.onClick() : () => null;
-    };
-
-    if (props.visible === false) {
         return null
+
     }
 
     return (
         <LinkWrapper
-            link={props.link}
-            externalLink={props.externalLink}
+            link={link}
+            externalLink={externalLink}
         >
-            <>
+            <div className={classnames(
+                'view-formatter-wrapper-box',
+                wrapperClass, alignIcon && "icon-align",
+                type)} >
+
+                <ViewFormatterIconBox
+                    svgIcon={props.svgLeftIcon}
+                    textIcon={props.leftTextIcon}
+                    iconClass='view-formatter-left-icon'
+                    linkIcon={props.linkIcon}
+                />
+
 
                 {
                     ["settings-item", "settings-item-flex", "classic"].includes(String(type))
 
-                    &&
+                        ?
 
-                    <div
-                        className={classnames('view-formatter', type, className)}
-                        onClick={() => onClick()}
-                        tabIndex={0}
-                        role={"button"}
-                    >
-
-                        <ViewFormatterIconBox
-                            svgIcon={props.svgLeftIcon}
-                            textIcon={props.leftTextIcon}
-                            iconClass='view-formatter-left-icon'
-                            linkIcon={props.linkIcon}
+                        <ClassicViewFormatter
+                            {...props}
+                            type={type as "classic" | "settings-item" | "settings-item-flex"}
                         />
 
-                        <div>
+                        :
 
-                            <p> {title || ""} </p>
-                            {value && <p> {value} </p>}
-
-                        </div>
-
-
-                        <ViewFormatterIconBox
-                            svgIcon={undefined}
-                            iconClass="view-formatter settings-item-icon"
-                        />
-
-
-                    </div>
-
+                        <RegularViewFormatter {...props} />
                 }
 
-                {!["settings-item", "settings-item-flex", "classic"].includes(String(type)) &&
+                <ViewFormatterIconBox
+                    svgIcon={ type === "settings-item" ? RightIcon() : props.svgRightIcon}
+                    textIcon={props.rightTextIcon}
+                    iconClass={classnames('view-formatter-left-icon', props.rightIconClass)}
+                    linkIcon={props.rightLinkIcon}
+                />
 
+            </div>
 
-                    <div
-                        className={`view-formatter ${collapsible ? collapsedClass : ""} ${className || ""}`}
-                        onClick={() => onClick()}
-                        tabIndex={0}
-                        role={"button"}
-                    >
-
-                        <div className="view-formatter-title-box">
-
-
-                            <p> {title || ""} </p>
-
-                            <ViewFormatterIconBox
-                                svgIcon={undefined}
-                                iconClass='collapsible-icon'
-                            />
-
-
-                        </div>
-
-                        <span>
-
-                            {Array.isArray(value) ?
-
-                                value.map((item, index) =>
-
-                                    <p
-                                        key={`${title}-${index}`}
-                                        className={classnames(props.valueClass, "view-formatter-p")
-                                        }>
-
-                                        {String(item) || ""}
-
-                                    </p>
-
-                                )
-
-                                :
-
-                                <p className={classnames(props.valueClass)}> {value || ""} </p>
-
-                            }
-
-                            {extraValue && <p> {extraValue || ""} </p>}
-
-                        </span>
-
-
-                    </div>
-                }
-            </>
         </LinkWrapper>
     )
-}
-
-interface IconProps {
-    textIcon?: string,
-    svgIcon?: string,
-    iconClass?: string,
-    linkIcon?: string
 }
 
 interface Props {
     title?: string,
     value?: string | number | string[],
     valueClass?: string,
-    type?: string,
+    type?: "settings-item" | "settings-item-flex" | "classic" | string,
     onClick?(): void,
+    titleClass?: string,
     className?: string,
     visible?: boolean,
+    rightLinkIcon?: string,
     svgLeftIcon?: string,
+    alignIcon?: boolean,
+    wrapperClass?: string,
+    svgRightIcon?: string,
+    rightTextIcon?: string,
     leftTextIcon?: string,
     extraValue?: string,
     rightIcon?: null | undefined | string,
     linkIcon?: string,
     link?: string,
-    externalLink?: string
+    externalLink?: string,
+    textBoxClass?: "view-formatter-text-box-flex",
+    rightIconClass?: string
 }

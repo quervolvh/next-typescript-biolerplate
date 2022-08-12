@@ -1,3 +1,29 @@
+// (?=.*[a-z])
+
+export const containsLowerCase = (text: string): boolean => {
+    //eslint-disable-next-line
+    const re = /^(?=.*[a-z])/;
+    return re.test(text);
+}
+
+export const containsUpperCase = (text: string): boolean => {
+    //eslint-disable-next-line
+    const re = /^(?=.*[A-Z])/;
+    return re.test(text);
+}
+
+export const containsNumeric = (text: string): boolean => {
+    //eslint-disable-next-line
+    const re = /^(?=.*[0-9])/;
+    return re.test(text);
+}
+
+export const containsSpecialChar = (text: string): boolean => {
+    //eslint-disable-next-line
+    const re = /^(?=.*[!@#$%^&*])/;
+    return re.test(text);
+}
+
 export const validateEmail: (email: string) => boolean = (email) => {
     //eslint-disable-next-line
     const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

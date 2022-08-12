@@ -6,7 +6,6 @@ import { PriceField } from './PriceField';
 import { ReactElement } from 'react';
 import { LabeledCheckbox } from './LabelledCheckBox';
 import { OptionsInput } from './OptionsInput';
-import { PinInput } from './PinInput';
 import { Switch } from './Switch';
 
 export const FormField: React.FC<Props> = (props) => {
@@ -19,9 +18,6 @@ export const FormField: React.FC<Props> = (props) => {
     let RenderElement: ReactElement | any = () => null;
 
     switch (props?.type) {
-        case 'pin':
-            RenderElement = PinInput;
-            break;
         case 'image':
             RenderElement = ImageInput;
             break;

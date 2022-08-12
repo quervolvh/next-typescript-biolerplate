@@ -3,23 +3,25 @@
 }
 
 $colors: (
-  primary: #f15a01,
+  primary: #f15a01
 );
 
 $colors: (
   primary: #f15a01,
+  secondary-text: #e0e3e5,
   red: #ea3223,
   white: #ffffff,
   footer: #18191f,
   footer-icon-bg: #303135,
   footer-text: rgba(217, 219, 225, 1),
   dark: rgba(24, 25, 31, 1),
+  faux-blue: rgba(22, 22, 168, 0.814),
   input-border: #e0e3e5,
   input-bg: #f3f3f3,
   input-placeholder: rgba(185, 185, 185, 1),
   modal-overlay: rgba(0, 0, 0, 0.2),
   success: rgba(75, 222, 151, 1),
-  empty-item: rgba(241, 90, 1, 0.5),
+  empty-item: rgba(241, 90, 1, 0.5)
 );
 
 $shadows: (
