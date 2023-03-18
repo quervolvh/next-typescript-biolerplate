@@ -1,6 +1,6 @@
 import React from 'react';
 import { Header } from './header';
-import { HtmlHead } from 'components';
+import { MetaHead } from 'components';
 import { classnames } from 'utils';
 import LandingLayoutFooterCr from './LandingLayoutFooterCr';
 import LandingLayoutFooter from './Footer';
@@ -19,9 +19,11 @@ export const LandingLayout: React.FC<Props> = ({
 }) => {
     return (
         <>
-            <HtmlHead
+            
+            <MetaHead
                 title={headTitle}
             />
+
             <div className={`landingLayout ${className}`}>
 
                 {

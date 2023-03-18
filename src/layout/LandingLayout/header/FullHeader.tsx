@@ -5,7 +5,7 @@ import Twitter from 'assets/svg/social/Twitter.svg';
 import { classnames } from 'utils';
 
 
-export const FullHeader: React.FC<Props> = ({showInvest }): JSX.Element => {
+export const FullHeader: React.FC<Props> = ({ showInvest }): JSX.Element => {
 
     return (
         <div
@@ -15,20 +15,21 @@ export const FullHeader: React.FC<Props> = ({showInvest }): JSX.Element => {
 
                 <div className="landingLayout-header-left">
 
-                    <Link href={"/"}>
-                        <a>
-                            <img src={Twitter} alt={"HalaDigital"} />
-                        </a>
+                    <Link
+                        href={"/"}
+                    >
+                        <img src={Twitter} alt={"companyal"} />
                     </Link>
 
                     {leftLinks.map((item, index) =>
 
                         <Link
                             key={`landingLayout-header-left-item-${index}`}
-                            href={item.link || ""}>
-                            <a>
-                                {item.title}
-                            </a>
+                            href={item.link || ""}
+                        >
+
+                            {item.title}
+
                         </Link>
                     )}
 
@@ -38,13 +39,16 @@ export const FullHeader: React.FC<Props> = ({showInvest }): JSX.Element => {
 
                 <div className="landingLayout-header-right">
 
-                    { showInvest && rightLinks.map((item, index) =>
+                    {showInvest && rightLinks.map((item, index) =>
+
                         <Link
                             key={`landingLayout-header-right-item-${index}`}
-                            href={item.link || ""}>
-                            <a className={item.class}>
-                                {item.title}
-                            </a>
+                            className={item.class}
+                            href={item.link || ""}
+                        >
+
+                            {item.title}
+
                         </Link>
 
                     )}

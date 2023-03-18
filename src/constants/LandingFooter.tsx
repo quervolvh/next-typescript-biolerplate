@@ -11,10 +11,10 @@ interface FooterTypes {
 };
 
 export const SocialLinks = {
-    facebook: "https://www.facebook.com/haladigital/",
-    youtube: "https://www.youtube.com/channel/haladigital",
-    instagram: "https://www.instagram.com/haladigital",
-    twitter: "https://www.twitter.com/haladigital"
+    facebook: "https://www.facebook.com/companyal/",
+    youtube: "https://www.youtube.com/channel/companyal",
+    instagram: "https://www.instagram.com/companyal",
+    twitter: "https://www.twitter.com/companyal"
 }
 
 export const LandingFooterAbout: Array<FooterTypes> = [{

@@ -4,8 +4,10 @@ import Link from 'next/link';
 export const FooterLinks: FC<Props> = ({ title, link }) => {
     return (
         <Link
-            href={link}>
-            <a className="footer-link"> {title} </a>
+            className="footer-link"
+            href={link}
+        >
+            {title}
         </Link>
     );
 }
@@ -19,11 +21,11 @@ export const FooterLogoField: FC<FooterLogoProps> = ({ logo, text, alt }) => {
     );
 }
 
-export const FooterIconSet: FC<{ icons: string[] , links?: string[] }> = ({ icons , links }) => {
+export const FooterIconSet: FC<{ icons: string[], links?: string[] }> = ({ icons, links }) => {
     return (
         <div className="footer-icon-set">
             {icons.map((icon, index) =>
-                <a 
+                <a
                     key={`social-image-${index}`}
                     href={links?.[index] || ""}>
                     {icon.includes("<svg") ?

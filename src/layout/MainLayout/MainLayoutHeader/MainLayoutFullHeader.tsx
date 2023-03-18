@@ -12,15 +12,15 @@ export const MainLayoutFullHeader: React.FC<Props> = ({ avatar, title }) => {
         {title && <MainLayoutLegend title={title} />}
 
 
-        <Link href={"/account"}>
-
-          <a
-            tabIndex={0}
+        <Link 
+          href={"/account"}
+          tabIndex={0}
             role={"button"}
             onKeyDown={(e) => e.key === "Enter" && router.push("/account")}
           >
+
+          
             <img src={avatar || UserAvatar} alt={'user--'} />
-          </a>
 
         </Link>
       </div>

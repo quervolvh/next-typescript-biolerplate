@@ -7,11 +7,7 @@ export const MobileHeaderToggler: React.FC<Props> = ({ setExpansion, isExpanded 
 
         <div className="landingLayout-header-mobile-top">
 
-            <Link href={"/"}>
-                <a>
-                    {/* <img src={StellasLogo} alt={"stellas"} /> */}
-                </a>
-            </Link>
+            <Link href={"/"} />
 
             <i
                 className={isExpanded ? "fas fa-times" : "fas fa-bars"}

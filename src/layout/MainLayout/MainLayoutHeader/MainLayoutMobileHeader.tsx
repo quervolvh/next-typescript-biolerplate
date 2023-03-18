@@ -37,9 +37,7 @@ export const MainLayoutMobileHeader: React.FC<Props> = ({ active, avatar }): JSX
                     role={"button"}
                     onKeyDown={(e) => e.key === "Enter" && router.push("/account")}>
                     <Link href={"/account"}>
-                        <a>
-                            <img src={avatar || UserAvatar} alt={'user--'} />
-                        </a>
+                        <img src={avatar || UserAvatar} alt={'user--'} />
                     </Link>
                 </div>
 
@@ -55,14 +53,17 @@ export const MainLayoutMobileHeader: React.FC<Props> = ({ active, avatar }): JSX
                                     onClick={() => item.link === "/logout" ? reset() : null}
                                     className="main-layout-sideNav-item"
                                     key={`side-nav-item-${index}`}>
-                                    <Link href={item.link === "/logout" ? '' : item.link}>
-                                        <a
-                                            className={(activeItem === String(item.title).toLowerCase()) ? 'active' : ''}
-                                            role="button">
-                                            <div className="bulb" />
-                                            <span> {item.title} </span>
-                                        </a>
+                                    <Link
+
+                                        href={item.link === "/logout" ? '' : item.link}
+
+                                        className={(activeItem === String(item.title).toLowerCase()) ? 'active' : ''}
+                                        role="button"
+                                    >
+                                        <div className="bulb" />
+                                        <span> {item.title} </span>
                                     </Link>
+
                                 </div>
                             )
                         })}

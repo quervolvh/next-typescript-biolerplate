@@ -25,13 +25,14 @@ const MainLayoutSideNav: React.FC<{ active?: string }> = ({ active }) => {
                             className={classnames("main-layout-sideNav-item", isActive && "active")}
                             key={`side-nav-item-${index}`}>
                             <Link
+                                role="button"
+                                className={isActive ? 'active' : ''}
                                 href={item.link === "/logout" ? '' : item.link}>
-                                <a
-                                    className={isActive ? 'active' : ''}
-                                    role="button">
-                                    <div className="bulb" />
-                                    <span> {item.title} </span>
-                                </a>
+
+                                <div className="bulb" />
+                            
+                                <span> {item.title} </span>
+
                             </Link>
                         </div>
                     )

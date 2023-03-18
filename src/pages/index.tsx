@@ -6,7 +6,7 @@ const Home: React.FC<Props> = ({ isMobile, deviceWidth }) => {
     return (
 
         <LandingLayout
-            headTitle={"Haladigital"}
+            headTitle={"companyal"}
             isMobile={isMobile}
             deviceWidth={deviceWidth}
             showFooter={true}

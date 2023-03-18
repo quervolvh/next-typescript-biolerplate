@@ -10,9 +10,9 @@ const LandingLayoutFooterCr: FunctionComponent = () => {
             <div className="landingLayout-footer-cr-holder">
 
                 <Link href={"/"}>
-                    <a>
-                        <img src={Twitter} alt={"HalaDigital"} />
-                    </a>
+
+                    <img src={Twitter} alt={"companyal"} />
+
                 </Link>
 
                 <p> ©{new Date().getFullYear()} All rights reserved </p>
